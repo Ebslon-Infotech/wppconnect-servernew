@@ -123,6 +123,12 @@ routes.post(
   MessageController.sendFile
 );
 routes.post(
+  '/api/:session/send-image-url',
+  verifyToken,
+  statusConnection,
+  MessageController.sendFileUrl
+);
+routes.post(
   '/api/:session/send-sticker',
   upload.single('file'),
   verifyToken,
